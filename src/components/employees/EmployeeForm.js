@@ -16,8 +16,8 @@ export default (props) => {
 
   const makeNewEmployee = () => {
     const locationId = parseInt(location.current.value);
-    const isManager = manager.current.value === "YES" ? "true" : "false";
-    const isFullTime = fullTime.current.value === "YES" ? "true" : "false";
+    const isManager = manager.current.value;
+    const isFulltime = fullTime.current.value;
 
     if (locationId === 0) {
       window.alert("Please select a location");
@@ -27,7 +27,7 @@ export default (props) => {
         locationId: locationId,
         hourlyRate: wage.current.value,
         manager: isManager,
-        fullTime: isFullTime,
+        fullTime: isFulltime,
       }).then(props.toggler);
     }
   };
@@ -70,17 +70,17 @@ export default (props) => {
       </fieldset>
       <fieldset>
         <div className="form-group">
-          <label htmlFor="location">Manager? </label>
+          <label htmlFor="manager">Manager? </label>
           <select
             defaultValue=""
-            name="location"
-            ref={location}
+            name="manager"
+            ref={manager}
             id="employeeLocation"
             className="form-control"
           >
             <option value="0">Select a option</option>
-            <option value="YES">Yes</option>
-            <option value="NO">No</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
           </select>
         </div>
       </fieldset>
@@ -109,8 +109,8 @@ export default (props) => {
             className="form-control"
           >
             <option value="0">Select a option</option>
-            <option value="Full-Time"></option>
-            <option value="Part-Time"></option>
+            <option value="true">Full-Time</option>
+            <option value="false">Part-Time</option>
           </select>
         </div>
       </fieldset>
@@ -122,7 +122,7 @@ export default (props) => {
         }}
         className="btn btn-primary"
       >
-        Save Appointment
+        Save Employee
       </button>
     </form>
   );
