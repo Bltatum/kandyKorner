@@ -79,8 +79,8 @@ export default (props) => {
             className="form-control"
           >
             <option value="0">Select a option</option>
-            <option value="YES"></option>
-            <option value="NO"></option>
+            <option value="YES">Yes</option>
+            <option value="NO">No</option>
           </select>
         </div>
       </fieldset>

@@ -5,12 +5,11 @@ import { EmployeeContext } from "./EmployeeProvider";
 import { LocationContext } from "../locations/LocationProvider";
 import EmployeeForm from "./EmployeeForm";
 
-const [modal, setModal] = useState(false);
-const toggle = () => setModal(!modal);
-
 export default () => {
   const { employees } = useContext(EmployeeContext);
   const { locations } = useContext(LocationContext);
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
 
   return (
     <>
