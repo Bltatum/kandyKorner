@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Kandykorner from "./components/Kandykorner";
-import "./index.css";
+import KandyKorner from "./components/KandyKorner";
 
-ReactDOM.render(<Kandykorner />, document.getElementById("root"));
+ReactDOM.render(<KandyKorner />, document.getElementById("root"));
