@@ -10,3 +10,8 @@
   padding: 1em;
   border: 1px solid darkgoldenrod;
 }
+
+button {
+  height: 4rem;
+  width: 5rem;
+}
