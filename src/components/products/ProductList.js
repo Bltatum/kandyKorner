@@ -11,14 +11,11 @@ export default () => {
   const { addCustomerProduct } = useContext(CustomerProductContext);
   const { CustomerProduct } = useContext(CustomerProductContext);
 
-  const purchaseCandy = () => {
-    const foundProductId = parseInt(
-      products.find((prod) => prod.id === CustomerProduct.productId)
-    );
+  const purchaseCandy = (productId) => {
     const userId = parseInt(localStorage.getItem("kandy_customer"));
 
     addCustomerProduct({
-      productId: foundProductId,
+      productId: productId,
       customerId: userId,
     });
   };
@@ -41,7 +38,7 @@ export default () => {
               type="submit"
               onClick={(evt) => {
                 evt.preventDefault(); // Prevent browser from submitting the form
-                purchaseCandy();
+                purchaseCandy(pro.id);
               }}
               className="btn btn-primary"
             >
